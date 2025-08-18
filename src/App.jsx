@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import Header from './components/Header'
-import Banner from './components/banner'
-import Topics from './components/Topics'
+import Header from "./components/Header";
+import Banner from "./components/banner";
+import Topics from "./components/Topics";
 import Detail from "./components/Detail";
 
 function App() {
@@ -12,14 +12,14 @@ function App() {
     "⭐ Top Rated": `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`,
     "🔥 Popular": `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,
     "🚀 Upcoming": `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}`,
-  }
+  };
+
   return (
-    <>
-      <div className="bg-black text-white">
-        <div className="w-full px-10 py-8">
-          <div className="p-5">
-            <Header />
-          
+    <div className="bg-black text-white">
+      <div className="w-full px-4 sm:px-6 lg:px-10 py-6 sm:py-8">
+        <div className="p-3 sm:p-5">
+          <Header />
+
           <Routes>
             <Route
               path="/"
@@ -34,11 +34,10 @@ function App() {
             />
             <Route path="/movie/:id" element={<Detail />} />
           </Routes>
-          </div>
         </div>
       </div>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -45,13 +45,13 @@ function Detail() {
   if (!movie) return <div className="text-center mt-10">Loading...</div>;
 
   return (
-    <div className="max-w-6xl mx-auto p-6 text-white">
-      <div className="flex flex-col md:flex-row gap-8">
+    <div className="max-w-6xl mx-auto p-4 sm:p-6 text-white">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-8">
         {/* LEFT COLUMN: Poster or Trailer */}
         <div className="w-full md:w-1/2 rounded-lg shadow-lg overflow-hidden">
           {showTrailer && trailer ? (
             <iframe
-              className="w-full h-[400px]"
+              className="w-full h-[300px] sm:h-[400px]"
               src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1`}
               title="Movie Trailer"
               frameBorder="0"
@@ -62,40 +62,41 @@ function Detail() {
             <img
               src={`${API_IMAGE}${movie.poster_path}`}
               alt={movie.title}
-              className="w-full h-[400px] object-cover"
+              className="w-full h-[300px] sm:h-[400px] object-cover"
             />
           )}
         </div>
 
         {/* RIGHT COLUMN: Movie Details */}
         <div className="w-full md:w-1/2 flex flex-col justify-center">
-          <h1 className="text-3xl font-bold mb-2">{movie.title}</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold mb-2">{movie.title}</h1>
           {movie.tagline && (
-            <p className="italic text-gray-400 mb-2">“{movie.tagline}”</p>
+            <p className="italic text-gray-400 mb-2 text-sm sm:text-base">
+              “{movie.tagline}”
+            </p>
           )}
-          <p className="text-sm mb-1">📅 Release Date: {movie.release_date}</p>
-          <p className="text-sm mb-1">🎬 Status: {movie.status}</p>
-          <p className="text-sm mb-1">⏱ Runtime: {movie.runtime} min</p>
-          <p className="text-sm mb-1">
+          <p className="text-xs sm:text-sm mb-1">📅 Release Date: {movie.release_date}</p>
+          <p className="text-xs sm:text-sm mb-1">🎬 Status: {movie.status}</p>
+          <p className="text-xs sm:text-sm mb-1">⏱ Runtime: {movie.runtime} min</p>
+          <p className="text-xs sm:text-sm mb-1">
             ⭐ Rating: {movie.vote_average?.toFixed(1)} / 10
           </p>
-          <p className="text-sm mb-1">
-            🎭 Genres:{" "}
-            {movie.genres && movie.genres.map((g) => g.name).join(", ")}
+          <p className="text-xs sm:text-sm mb-1">
+            🎭 Genres: {movie.genres && movie.genres.map((g) => g.name).join(", ")}
           </p>
-          <p className="text-sm mb-4">
+          <p className="text-xs sm:text-sm mb-4">
             🌍 Languages:{" "}
             {movie.spoken_languages &&
               movie.spoken_languages.map((l) => l.english_name).join(", ")}
           </p>
 
-          <p className="mb-6">{movie.overview}</p>
+          <p className="mb-6 text-sm sm:text-base">{movie.overview}</p>
 
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             {/* Back Button */}
             <Link
               to="/"
-              className="bg-teal-600 px-4 py-2 rounded-lg text-white hover:bg-teal-700"
+              className="bg-teal-600 px-3 sm:px-4 py-2 rounded-lg text-white hover:bg-teal-700 text-xs sm:text-sm"
             >
               Back
             </Link>
@@ -104,7 +105,7 @@ function Detail() {
             {trailer && (
               <button
                 onClick={() => setShowTrailer(!showTrailer)}
-                className="bg-red-600 px-4 py-2 rounded-lg text-white hover:bg-red-700"
+                className="bg-red-600 px-3 sm:px-4 py-2 rounded-lg text-white hover:bg-red-700 text-xs sm:text-sm"
               >
                 {showTrailer ? "Close Trailer" : "▶ Play Trailer"}
               </button>
