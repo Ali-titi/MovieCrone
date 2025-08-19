@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Banner from "./components/banner";
+import Banner from "./components/Banner";
 import Topics from "./components/Topics";
 import Detail from "./components/Detail";
 
