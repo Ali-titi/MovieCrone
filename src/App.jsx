@@ -15,7 +15,7 @@ function App() {
   };
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-[#030303] text-white">
       <div className="w-full px-4 sm:px-6 lg:px-10 py-6 sm:py-8">
         <div className="p-3 sm:p-5">
           <Header />
