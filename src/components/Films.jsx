@@ -6,7 +6,7 @@ function Films(props) {
       <img
         src={props.image}
         alt={props.title}
-        className="w-full h-[220px] sm:h-[240px] object-cover rounded-lg"
+        className="w-full h-[220px] sm:h-[240px] object-cover"
       />
       <p className="font-semibold text-sm sm:text-base mt-2">{props.title}</p>
       <p className="flex justify-between text-xs sm:text-sm">
@@ -16,7 +16,7 @@ function Films(props) {
 
       <Link
         to={`/movie/${props.id}`}
-        className="mt-2 inline-block bg-teal-600 text-white px-3 py-1 rounded-lg text-xs sm:text-sm hover:bg-teal-700"
+        className="mt-2 inline-block bg-teal-600 text-white px-3 py-1 text-xs sm:text-sm hover:bg-teal-700"
       >
         Details
       </Link>
